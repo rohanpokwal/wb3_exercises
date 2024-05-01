@@ -11,25 +11,30 @@ function getMedicareTax(grossPay) {
 }
 
 function getFederalTax(grossPay, withHoldCode) {
-  switch (withHoldCode) {
-    case 0:
-      return grossPay * (23 / 100);
-      break;
-    case 1:
-      return grossPay * (21 / 100);
-      break;
-    case 2:
-      return grossPay * (19.5 / 100);
-      break;
-    case 3:
-      return grossPay * (18.5 / 100);
-      break;
-    default:
-      return grossPay * (18 / 100);
+  let rate = 0;
+  let federalTaxAmount = 0;
+  let message = "";
+
+  if (withHoldCode < 0) {
+    message = "The withhold Code must be above 0";
+    return message;
+  } else if (withHoldCode === 0) {
+    rate = 0.23;
+  } else if (withHoldCode === 1) {
+    rate = 0.21;
+  } else if (withHoldCode === 2) {
+    rate = 0.195;
+  } else if (withHoldCode === 3) {
+    rate = 0.185;
+  } else {
+    rate = 0.18 - (withHoldCode - 4) * 0.005;
   }
+
+  federalTaxAmount = grossPay * rate;
+  return federalTaxAmount;
 }
 
 //Call the function
-console.log(getFederalTax(750, 0).toFixed(2));
-console.log(getFederalTax(1550, 2).toFixed(2));
+
+console.log(getFederalTax(1550, -1));
 console.log(getFederalTax(1100, 6).toFixed(2));
