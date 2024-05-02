@@ -31,27 +31,6 @@ function parseAndDisplayName(someName) {
   }
 }
 
-parseAndDisplayName("Rohan");
+parseAndDisplayName("Marie");
 parseAndDisplayName("Brenda Kaye");
 parseAndDisplayName("Mario David Santos");
-
-// let fullName = "Gautam Bahadur Ghaley";
-
-// console.log(fullName.substring(fullName.lastIndexOf(" "), fullName.length));
-
-/* if (spacePosition === -1) {
-    console.log(`
-    Name: ${fullName}
-    Only Name: ${fullName}`);
-  } else if (spacePosition) {
-    console.log(`
-    Name: ${fullName}
-    First Name: ${firstName}
-    Last Name: ${lastName}`);
-  } else if (spacePosition >= 0 && lastSpacePosition >= 0) {
-    console.log(`
-    Name: ${fullName}
-    First Name: ${firstName}
-    Middle Name: ${middleName}
-    Last Name: ${lastName}`);
-  } */
