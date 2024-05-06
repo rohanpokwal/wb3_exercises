@@ -15,3 +15,10 @@ function displayTime() {
   let generatedDate = new Date(theDate.value);
   theParagraph.innerHTML = generatedDate.toLocaleString();
 }
+
+let theDate = new Date();
+
+//Just get the Year
+console.log(theDate.getFullYear());
+console.log(theDate.getMonth());
+console.log(theDate.getHours());
